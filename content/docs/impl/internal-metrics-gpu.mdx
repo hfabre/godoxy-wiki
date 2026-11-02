@@ -23,7 +23,7 @@ simply report no GPUs.
 
 | Kind  | OS    | Source                                                    | Requirement                                            |
 | ----- | ----- | --------------------------------------------------------- | ------------------------------------------------------ |
-| intel | Linux | i915 perf PMU `*-busy` counters (same as `intel_gpu_top`) | `CAP_PERFMON`, or `kernel.perf_event_paranoid` <= 0    |
+| intel | Linux | i915 perf PMU `*-busy` counters (same as `intel_gpu_top`) | `CAP_PERFMON`, or `kernel.perf_event_paranoid <= 0`  |
 
 The Intel collector reads `/sys/bus/event_source/devices/i915*`, opens one
 system-wide perf counter per `<engine>-busy` event and reports
