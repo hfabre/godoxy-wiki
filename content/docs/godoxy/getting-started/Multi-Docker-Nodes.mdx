@@ -12,7 +12,7 @@ description: Setup multi docker nodes for GoDoxy
 3. Paste the docker compose into a file (e.g., `compose.yml`) on the agent server then start it with `docker compose up -d`
 
 <Callout>
-The **GPU Usage** graph (Intel GPUs on Linux) reads the i915 perf counters, which requires `CAP_PERFMON`. Add it to the agent service to enable the graph; without it, GPU metrics are skipped silently.
+The **GPU Usage** graph (Intel GPUs on Linux) reads the i915 perf counters, which requires `CAP_PERFMON`. Add it to the agent service to enable the graph; without it, GPU metrics are skipped and the agent logs a `gpu metrics disabled` warning at startup.
 
 ```yaml
 cap_add:

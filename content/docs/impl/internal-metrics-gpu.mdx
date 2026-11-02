@@ -10,9 +10,9 @@ description: "Collects per-engine GPU utilization for the system info poller"
 Each GPU kind is a `Collector` implementation registered in a per-OS factory
 map; collectors are probed once, on first use.
 
-GPUs that are absent or not readable are skipped silently (debug log only), so
-hosts without a supported GPU, or containers without the needed permission,
-simply report no GPUs.
+Hosts without a supported GPU report no GPUs silently. A GPU that is present
+but not readable (e.g. a container without the needed permission) is skipped
+with a single warning logged at probe time.
 
 ### Non-goals
 
